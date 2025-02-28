@@ -3,3 +3,4 @@ venv/
 
 # Ignore contents of bert_resources but keep the folder
 bert_resources/*
+!bert_resources/.gitkeep
