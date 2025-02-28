@@ -1,0 +1,29 @@
+1. Create a virtual environment (if not already present)
+    python -m venv venv
+
+2. Activate it
+    venv\Scripts\activate  # Windows
+
+3. Install all dependencies (exact versions are needed, else nothing will work!)
+    pip install -r requirements.lock
+
+4. pip install python-dotenv, then create .env, add this line there: TF_USE_LEGACY_KERAS=False, and finally add this in flask app.py:
+        from dotenv import load_dotenv
+        import os
+
+        load_dotenv()  # This loads variables from the .env file
+
+    ELSE simple write this in terminal: $env:TF_USE_LEGACY_KERAS="False"
+
+
+5. Ensure Required Files Exist:
+  ✅ TF-IDF tokenizer: sequential_resources/tfidf_tokenizer.pkl
+  ✅ Sequential Model: sequential_resources/text_classification_model.h5
+  ✅ BERT Tokenizer: ./bert_resources/bert_tokenizer/
+  ✅ BERT Model: ./bert_resources/bert_text_classification_model/
+
+6. For bert_resources, type this command while you're in the server directory (this will download the resources inside that folder)
+    kaggle kernels output kunalpisolkar24/llm-bert-98-93 -p bert_resources
+
+7. Running the Flask App:
+    python app.py
