@@ -67,7 +67,7 @@ const Navigation = () => {
                   <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-48 mt-3">
+              <DropdownMenuContent align="end" className="w-48 mt-3 z-50">
                 <DropdownMenuItem asChild>
                   <Link href="/profile">Profile</Link>
                 </DropdownMenuItem>
@@ -86,8 +86,8 @@ const Navigation = () => {
           )}
 
           {isMobile && (
-            <div className="absolute inset-0 flex items-center justify-center z-50">
-              <ChangeModel setTab={setTab} tab={tab} />
+            <div className="absolute top-2 left-1/2 transform -translate-x-1/2 z-10">
+              <ChangeModel />
             </div>
           )}
         </div>
